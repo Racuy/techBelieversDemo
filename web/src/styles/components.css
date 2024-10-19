@@ -1,0 +1,337 @@
+/* Variables de color */
+:root {
+    --color-principal: #ff3f6c;  /* Color principal (Ej. Botones, énfasis) */
+    --color-secundario-claro: #f9f0eb;  /* Color secundario claro (Ej. Fondo) */
+    --color-secundario-oscuro: #333;  /* Color secundario oscuro (Ej. Texto) */
+    --color-wsp: #25D366;  /* Color original de WhatsApp */
+}
+
+/* Barra de navegación negra */
+.navbar {
+    background-color: black;
+    padding: 15px 0;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    padding: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Header */
+.header {
+    background-image: url('https://eventornado-files.ams3.cdn.digitaloceanspaces.com/events/290/R23w8JhdNYraXyOVXwKzCJy0gQOP4sFix0vq9XvZ_large.jpeg');
+    height: 200px;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: var(--color-secundario-claro);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Dropdown de filtros */
+.filter-dropdown {
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border: #333 solid;
+}
+
+/* Contenedor de la barra de búsqueda */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+/* Barra de búsqueda más ancha */
+.search-bar {
+    padding: 10px;
+    width: 100%;  /* Ancho ajustado */
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+    margin-left: 10px;
+    margin-right: 0px;
+    border: #333 solid;
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 8px rgba(255, 63, 108, 0.6);
+    border-color: var(--color-principal);
+}
+
+/* Ícono de lupa */
+.search-icon {
+    position: absolute;
+    right: 15px;
+    color: #ccc;
+    font-size: 18px;
+    padding: 5px;
+}
+
+/* Botón flotante "Chatea con Bella!" */
+.chat-floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Margen del borde de la pantalla */
+    display: flex;
+    align-items: center; /* Alineación vertical de la burbuja con el avatar */
+    gap: 0px;
+    z-index: 1000;
+}
+
+/* Globo de texto (burbuja) */
+.chat-bubble {
+    position: relative;
+    background-color: var(--color-principal);
+    border-radius: 30px;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out; /* Animación para que aparezca suavemente */
+}
+
+/* Flecha que conecta el globo con el ícono de Bella */
+.chat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--color-principal) transparent transparent transparent;
+}
+
+/* Botón "Chatea con Bella!" dentro del globo */
+.btn-talk-floating {
+    background-color: var(--color-principal);
+    border: none;
+    color: white;
+    font-size: 19px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Ícono de cierre (X) al lado izquierdo */
+.close-icon {
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Imagen flotante de Bella siempre visible */
+.avatar-floating {
+    width: 90px; /* Tamaño de la imagen */
+    height: 90px; /* Tamaño de la imagen */
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Product List */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+    padding: 0 10px;
+}
+
+/* Product Card */
+.product-card {
+    position: relative;
+    width: 100%;
+    height: 360px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+/* Imagen del producto */
+.product-image {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+/* Información del producto */
+.product-info {
+    padding: 10px;
+    height: 35%;
+    border-top: #333 solid;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--color-secundario-oscuro);
+}
+
+.product-info p {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Botón de compra */
+.btn-buy {
+    padding: 8px 16px;
+    background-color: black; /* Cambiar a negro */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Ajustes en dispositivos móviles */
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .product-card {
+        height: 300px;
+    }
+}
+
+/* Estilos del Modal de Producto */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y más opaco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que el modal esté por encima de otros elementos */
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px; /* Ancho máximo del modal */
+    width: 90%; /* Ancho ajustado para dispositivos móviles */
+    height: 85%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative; /* Para colocar el botón de cierre */
+    text-align: center; /* Centrar el contenido */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--color-secundario-oscuro);
+    
+}
+
+/* Estilos para la imagen del producto en el modal */
+.modal-product-image {
+    width: 80%; /* Imagen ocupa todo el ancho del modal */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 0px; /* Espaciado inferior */
+}
+
+.modal-product-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+.modal-product-price {
+    font-size: 20px;
+    color: var(--color-principal); /* Usar el color principal para el precio */
+    margin: 5px 0; /* Espaciado */
+}
+
+.modal-product-description {
+    font-size: 16px;
+    color: #555; /* Color gris para la descripción */
+    margin-bottom: 20px; /* Espaciado */
+}
+
+.modal-add-to-cart {
+    padding: 10px 20px;
+    background-color: black; /* Cambiar a negro */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
