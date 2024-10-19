@@ -11,7 +11,7 @@ const ChatButton = ({ message, isBubbleVisible, setIsBubbleVisible ,producto}) =
     };
     var mensajeWSP = producto ? "Hola Bella, estoy interesado en este producto, " + producto.name : "Hola Bella, me ayudas con mi compra?" 
     // Crear el enlace de WhatsApp
-    const whatsappLink = `https://wa.me/900955933?text=${encodeURIComponent(mensajeWSP)}`;
+    const whatsappLink = `https://wa.me/+15550486400?text=${encodeURIComponent(mensajeWSP)}`;
 
     return (
         <div className="chat-floating-button">
